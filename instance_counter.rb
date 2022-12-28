@@ -6,22 +6,17 @@ module InstanceCounter
 
   module ClassMethods
     def instances
-      @instances ||= 0
+      @instances
     end
 
-    private
-
-    def instances_increases
-      @instances += 1
-    end
   end
 
   module InstanceMethods
+
     protected
 
     def register_instance
-      self.class.instances
-      self.class.send(:instances_increases)
+      self.class.instances += 1
     end
   end
 end
