@@ -4,13 +4,13 @@ require_relative 'instance_counter'
 class Train
   include Manufacturer
   include InstanceCounter
+
   attr_reader :speed, :wagon_count, :number, :type, :route, :all_wagon, :station_index
 
   @@all_trains = []
 
   def self.find(num)
-    train = @@all_trains.detect { |tr| tr.number == num }
-    train.nil? ? nil : train
+    @@all_trains.detect { |tr| tr.number == num }
   end
 
   def initialize(number, type)
@@ -22,6 +22,7 @@ class Train
     @route = nil
     @station_index = nil
     @@all_trains << self
+    self.instances_increases
   end
 
   # Может тормозить (сбрасывать скорость до нуля)
