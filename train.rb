@@ -5,7 +5,7 @@ class Train
   include Manufacturer
   include InstanceCounter
 
-  attr_reader :speed, :wagon_count, :number, :type, :route, :all_wagon, :station_index, :register_instance
+  attr_reader :speed, :wagon_count, :number, :type, :route, :all_wagon, :station_index
 
   @@all_trains = []
 
@@ -90,8 +90,3 @@ class Train
     current_station.get_train(self)
   end
 end
-
-tr1 = Train.new(2545, 'pass')
-tr2 = Train.new('2545', 'pass')
-puts tr1.register_instance
-puts tr2.register_instance
