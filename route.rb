@@ -9,7 +9,7 @@ class Route
     @from = from
     @to = to
     @stations = [@from, @to]
-    self.register_instance
+    register_instance
   end
 
   # Может добавлять промежуточную станцию в список

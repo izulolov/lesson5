@@ -1,4 +1,4 @@
-require_relative 'instance_method'
+require_relative 'instance_counter'
 
 class Station
   include InstanceCounter
@@ -16,7 +16,7 @@ class Station
     @name = name
     @trains = []
     @@all_stations << name
-    self.register_instance
+    register_instance
   end
 
   # Может принимать поезда (по одному за раз)

@@ -4,7 +4,6 @@ require_relative 'instance_counter'
 class Train
   include Manufacturer
   include InstanceCounter
-
   attr_reader :speed, :wagon_count, :number, :type, :route, :all_wagon, :station_index
 
   @@all_trains = []
@@ -22,7 +21,7 @@ class Train
     @route = nil
     @station_index = nil
     @@all_trains << self
-    self.register_instance
+    register_instance
   end
 
   # Может тормозить (сбрасывать скорость до нуля)
