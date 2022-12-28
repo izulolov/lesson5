@@ -22,7 +22,7 @@ class Train
     @route = nil
     @station_index = nil
     @@all_trains << self
-    self.instances_increases
+    self.register_instance
   end
 
   # Может тормозить (сбрасывать скорость до нуля)

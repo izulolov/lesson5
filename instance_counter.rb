@@ -1,5 +1,5 @@
 module InstanceCounter
-  def self.include(place)
+  def self.included(place)
     place.extend ClassMethods
     place.include InstanceMethods
   end

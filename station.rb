@@ -16,7 +16,7 @@ class Station
     @name = name
     @trains = []
     @@all_stations << name
-    self.instances_increases
+    self.register_instance
   end
 
   # Может принимать поезда (по одному за раз)
